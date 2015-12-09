@@ -23,8 +23,8 @@
 #include <SPI.h>
 #include <SD.h>
 
-#define tempPin 1
-#define lightPin 0
+int tempPin = A1;
+int lightPin = A0;
 
 const int chipSelect = 4;
 
@@ -61,9 +61,9 @@ void loop()
 
   dataString += String((byte)tempC);
   dataString += ", ";
-  //lightC = analogRead(lightPin);
-
-  //dataString += String(lightC);
+  
+  lightC = analogRead(lightPin);
+  dataString += String(lightC);
   delay(1000);
 
 
